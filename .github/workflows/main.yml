@@ -1,0 +1,82 @@
+name: tp_tz_hw_2_iksanova
+  
+on:  
+  push:  
+    branches: "*"  
+  workflow_dispatch:  
+  
+jobs:  
+  test_min:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: working  
+        uses: actions/checkout@v3  
+      - name: test_min  
+        run: python min_test.py     
+      - name: tg_test_min  
+        if: ${{ always() }}  
+        uses: appleboy/telegram-action@master
+        with:  
+          to: ${{ secrets.TELEGRAM_GROUP_TOKEN }}  
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}  
+          message: Результат теста _min = ${{ job.status }}  
+              
+  test_max:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: working   
+        uses: actions/checkout@v3  
+      - name: test_max  
+        run: python max_test.py     
+      - name: tg_test_max  
+        if: ${{ always() }}  
+        uses: appleboy/telegram-action@master
+        with:  
+          to: ${{ secrets.TELEGRAM_GROUP_TOKEN }}  
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}  
+          message: Результат теста _max = ${{ job.status }}
+            
+  test_sum:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: working   
+        uses: actions/checkout@v3  
+      - name: test_sum  
+        run: python sum_test.py     
+      - name: tg_test_sum  
+        if: ${{ always() }}  
+        uses: appleboy/telegram-action@master
+        with:  
+          to: ${{ secrets.TELEGRAM_GROUP_TOKEN }}  
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}  
+          message: Результат теста _sum = ${{ job.status }}
+              
+  test_mult:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: working   
+        uses: actions/checkout@v3  
+      - name: test_mult  
+        run: python mult_test.py     
+      - name: tg_test_mult  
+        if: ${{ always() }}  
+        uses: appleboy/telegram-action@master
+        with:  
+          to: ${{ secrets.TELEGRAM_GROUP_TOKEN }}  
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}  
+          message: Результат теста _mult = ${{ job.status }}
+    
+  own_test_fact:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: working   
+        uses: actions/checkout@v3  
+      - name: own_test_fact  
+        run: python own_test.py     
+      - name: tg_test_fact  
+        if: ${{ always() }}  
+        uses: appleboy/telegram-action@master
+        with:  
+          to: ${{ secrets.TELEGRAM_GROUP_TOKEN }}  
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}  
+          message: Результат теста _fact = ${{ job.status }}
