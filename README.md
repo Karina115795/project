@@ -1,5 +1,5 @@
 [![tp_tz_hw_2_iksanova](https://github.com/Karina115795/tp_hse_tz_hw_2/actions/workflows/main.yml/badge.svg)](https://github.com/Karina115795/tp_hse_tz_hw_2/actions/workflows/main.yml)
-### Карина Иксанова, группа ББИ221.
+### Карина Иксанова.
 ### Ссылка на группу, куда выводятся сообщения об успешности работы моих тестов:
 https://t.me/+TYz_VuLNyP1lNWEy
 # 1. реализуйте функции чтения из файла, поиска минимального числа, поиска максимального числа, сложения и умножения всех чисел из файла - сделала.
